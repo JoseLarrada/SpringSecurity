@@ -22,8 +22,8 @@ public class ProductService {
 
     public ResponseEntity<List<Product>> findAll(){
         List<Product> products=productRepository.findAll();
-        if (products!=null && !products.isEmpty()){
-            ResponseEntity.ok(products);
+        if (!products.isEmpty()){
+            return ResponseEntity.ok(products);
         }
         return ResponseEntity.notFound().build();
     }
